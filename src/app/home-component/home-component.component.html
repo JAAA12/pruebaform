@@ -1,0 +1,34 @@
+<h1>{{title}}</h1>
+
+<form>
+ Número 1: <input type="text" [(ngModel)]="numero1" name="numero1"><br>
+ Número 2: <input type="text" [(ngModel)]="numero2" name="numero2"><br>
+ <input type="submit" value="sumar" (click)="sumar()"><br>
+ <p>La suma es :{{resultado}}</p>
+</form>
+
+<form>
+  Nombre: <input type="text" [(ngModel)]="nombre" name="nombre"><br>
+
+  Apellido: <input type="text" [(ngModel)]="apellido" name="apellido"><br>
+
+  <input type="submit" value="registrar" (click)="registrar()"><br>
+
+  <p *ngIf="registrado; else sinRegistrar" [ngStyle]="{color:mensaje==='Juliana' || nombre==='juliana' ? 'red' : 'black'}">{{mensaje}} <span [ngClass]="{paraPonerEstilo:nombre==='Juliana' || nombre==='juliana'}">{{nombre}}</span></p>
+
+  <ng-template #sinRegistrar>
+    <p>Aún no esta registrado</p>
+  </ng-template>
+</form>
+<app-empleados></app-empleados>
+
+
+<!-- video 19 min 15 -->
+<!-- Crear un servicio ng g s nombrequelequeremosdar-->
+<!-- const appRoutes=[
+  {path:'nombre que le pone a la ruta', component:nombre del componente}
+  ] importar routes y routermodule--- en imports routermodule.forroot(approutes)
+  router-otlet ---etiqueta--- se pone debajo de todo el menu y en l href de cada <a> se pone /nombre ruta
+    para darle una ruta a un boton se crea una función. primero se debe importar el router
+    luego se pone en la función this.router.navigate(['nombre de la ruta']);
+-->
